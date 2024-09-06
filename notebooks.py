@@ -19,5 +19,14 @@ if hist_boton :
 
 
 car_data = pd.read_csv('vehicles_us.csv') # leer los datos
-fig = px.scatter(car_data, x="odometer", y="price") # crear un gráfico de dispersión
-fig.show() # crear gráfico de dispersión
+
+disp_boton = st.button("Construir gráfico de dispersión")
+
+if disp_boton :
+      
+    st.write("Creacion de un gráfico de dispersión")
+      
+    fig_disp = px.scatter(car_data, x="odometer", y="price") # crear un gráfico de dispersión
+      
+    st.plotly_chart(fig_disp) # crear gráfico de dispersión
+    
